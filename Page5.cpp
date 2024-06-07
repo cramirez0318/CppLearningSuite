@@ -40,4 +40,4 @@ void displayPage5() {
 }
 
 // Register the page with the menu system
-bool registerPage5 = (registerPage('5', "FreePage", displayPage5), true);
+bool registerPage5 = (registerPage('5', "Python Database", displayPage5), true);
