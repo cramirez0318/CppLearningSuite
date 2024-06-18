@@ -111,4 +111,4 @@ void displayPage2() {
 }
 
 // Register the page with the menu system
-bool registerPage2 = (registerPage('2', "Vector Calculator", displayPage2), true);
+bool registerPage2 = (registerPage("2", "Vector Calculator", displayPage2, 2), true);

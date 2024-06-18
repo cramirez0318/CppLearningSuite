@@ -35,4 +35,4 @@ void displayPage6() {
 }
 
 // Register the page with the menu system
-bool registerPage6 = (registerPage('6', "TestPrint", displayPage6), true);
+bool registerPage6 = (registerPage("6", "TestPrint", displayPage6, 6), true);

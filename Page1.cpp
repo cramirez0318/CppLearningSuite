@@ -77,4 +77,4 @@ void displayPage1() {
 }
 
 // Register the page with the menu system
-bool registerPage1 = (registerPage('1', "Simple Calculator", displayPage1), true);
+bool registerPage1 = (registerPage("1", "Simple Calculator", displayPage1, 1), true);

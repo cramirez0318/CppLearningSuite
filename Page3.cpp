@@ -108,4 +108,4 @@ void displayPage3() {
 }
 
 // Register the page with the menu system
-bool registerPage3 = (registerPage('3', "Matrix Calculator", displayPage3), true);
+bool registerPage3 = (registerPage("3", "Matrix Calculator", displayPage3, 3), true);

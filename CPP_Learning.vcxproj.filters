@@ -42,6 +42,15 @@
     <ClInclude Include="Page7.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Page8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page10.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Menu.cpp">
@@ -69,6 +78,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Page7.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Page8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Page9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Page10.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

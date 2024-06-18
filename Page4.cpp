@@ -32,4 +32,4 @@ void displayPage4() {
 }
 
 // Register the page with the menu system
-bool registerPage4 = (registerPage('4', "Number Enter Print", displayPage4), true);
+bool registerPage4 = (registerPage("4", "Number Enter Print", displayPage4, 4), true);

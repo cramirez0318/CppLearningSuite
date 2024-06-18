@@ -1,13 +1,14 @@
 #include "Menu.h"
 #include <iostream>
+#include <cstdlib>
 
 int main() {
-	char choice;
+	std::string choice;
 	do {
 		displayMainMenu();
 		std::cin >> choice;
 		handleMainMenuChoice(choice);
-	} while (choice != 'e');
+	} while (choice != "e");
 
-	return 0;
+	return EXIT_SUCCESS;
 }

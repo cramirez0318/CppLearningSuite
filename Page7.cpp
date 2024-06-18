@@ -27,4 +27,4 @@ void displayPage7() {
 }
 
 // Register the page with the menu system
-bool registerPage7 = (registerPage('7', "WildLoop", displayPage7), true);
+bool registerPage7 = (registerPage("7", "WildLoop", displayPage7, 7), true);

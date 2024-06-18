@@ -1,29 +1,35 @@
 #include "Menu.h"
 #include <iostream>
+#include <unordered_map>
+#include <algorithm>
+#include <vector>
 
-std::unordered_map<char, MenuFunction> menuOptions;
-std::unordered_map<char, std::string> menuNames;
+std::unordered_map<std::string, MenuFunction> menuOptions;
+std::unordered_map<std::string, std::string> menuNames;
+std::vector<std::pair<int, std::string>> menuOrder;
 
-void registerPage(char key, const std::string& name, MenuFunction func) {
+void registerPage(const std::string& key, const std::string& name, const std::function<void()>& func, int order) {
 	menuOptions[key] = func;
 	menuNames[key] = name;
+	menuOrder.emplace_back(order, key);
+	std::ranges::sort(menuOrder.begin(), menuOrder.end());
 }
 
 void displayMainMenu() {
 	std::cout << "Main Menu:\n";
-	for (const auto& entry : menuNames) {
-		std::cout << entry.first << ". " << entry.second << "\n";
+	for (const auto& entry : menuOrder) {
+		std::cout << entry.second << ". " << menuNames[entry.second] << "\n";
 	}
 	std::cout << "e. Exit\n";
 	std::cout << "Enter your choice: ";
 }
 
-void handleMainMenuChoice(char choice) {
+void handleMainMenuChoice(const std::string& choice) {
 	auto it = menuOptions.find(choice);
 	if (it != menuOptions.end()) {
-		it->second();  
+		it->second();
 	}
-	else if (choice == 'e') {
+	else if (choice == "e") {
 		std::cout << "Exiting...\n";
 	}
 	else {

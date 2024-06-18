@@ -22,23 +22,29 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Page1.h" />
+    <ClInclude Include="Page10.h" />
     <ClInclude Include="Page2.h" />
     <ClInclude Include="Page3.h" />
     <ClInclude Include="Page4.h" />
     <ClInclude Include="Page5.h" />
     <ClInclude Include="Page6.h" />
     <ClInclude Include="Page7.h" />
+    <ClInclude Include="Page8.h" />
+    <ClInclude Include="Page9.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Page1.cpp" />
+    <ClCompile Include="Page10.cpp" />
     <ClCompile Include="Page2.cpp" />
     <ClCompile Include="Page3.cpp" />
     <ClCompile Include="Page4.cpp" />
     <ClCompile Include="Page5.cpp" />
     <ClCompile Include="Page6.cpp" />
     <ClCompile Include="Page7.cpp" />
+    <ClCompile Include="Page8.cpp" />
+    <ClCompile Include="Page9.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="database.py" />
