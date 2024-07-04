@@ -25,6 +25,7 @@
     <ClInclude Include="Page10.h" />
     <ClInclude Include="Page11.h" />
     <ClInclude Include="Page12.h" />
+    <ClInclude Include="Page13.h" />
     <ClInclude Include="Page2.h" />
     <ClInclude Include="Page3.h" />
     <ClInclude Include="Page4.h" />
@@ -41,6 +42,7 @@
     <ClCompile Include="Page10.cpp" />
     <ClCompile Include="Page11.cpp" />
     <ClCompile Include="Page12.cpp" />
+    <ClCompile Include="Page13.cpp" />
     <ClCompile Include="Page2.cpp" />
     <ClCompile Include="Page3.cpp" />
     <ClCompile Include="Page4.cpp" />

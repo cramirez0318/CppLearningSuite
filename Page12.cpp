@@ -9,10 +9,10 @@
 int add(int x, int y, const std::string& str, bool flag)
 {
 	int sum = x + y;
-	std::cout << "String argument: " << str << std::endl;
+	std::cout << "String argument: " << str << '\n';
 	if (flag)
 	{
-		std::cout << "Flag is true, doubling the sum." << std::endl;
+		std::cout << "Flag is true, doubling the sum." << '\n';
 		sum *= 2;
 	}
 	return sum;
@@ -37,7 +37,7 @@ void displayPage12()
 	std::cin >> flag;
 
 	int result = add(a, b, str, flag);
-	std::cout << "The result is: " << result << std::endl;
+	std::cout << "The result is: " << result << '\n';
 }
 
 // Register the page with the menu system
