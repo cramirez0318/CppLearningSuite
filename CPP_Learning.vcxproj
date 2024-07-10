@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="io.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Page1.h" />
     <ClInclude Include="Page10.h" />
     <ClInclude Include="Page11.h" />
     <ClInclude Include="Page12.h" />
     <ClInclude Include="Page13.h" />
+    <ClInclude Include="Page14.h" />
     <ClInclude Include="Page2.h" />
     <ClInclude Include="Page3.h" />
     <ClInclude Include="Page4.h" />
@@ -36,6 +38,7 @@
     <ClInclude Include="Page9.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="io.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Page1.cpp" />
@@ -43,6 +46,7 @@
     <ClCompile Include="Page11.cpp" />
     <ClCompile Include="Page12.cpp" />
     <ClCompile Include="Page13.cpp" />
+    <ClCompile Include="Page14.cpp" />
     <ClCompile Include="Page2.cpp" />
     <ClCompile Include="Page3.cpp" />
     <ClCompile Include="Page4.cpp" />
