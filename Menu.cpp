@@ -5,6 +5,9 @@
 #include <vector>
 #include <SDL.h>
 #include "graphics/MenuGraphics.h"
+#include <pybind11/embed.h>
+
+namespace py = pybind11;
 
 std::unordered_map<std::string, MenuFunction> menuOptions;
 std::unordered_map<std::string, std::string> menuNames;
@@ -21,6 +24,16 @@ void displayMainMenu(SDL_Renderer* renderer) {
 	renderMainMenu(renderer, menuOrder, menuNames);
 }
 
+void handle_key_input(SDL_Event event) {
+    if (event.type == SDL_KEYDOWN) {
+        if (event.key.keysym.sym == SDLK_u) {
+            py::exec("undo_action()");
+        } else if (event.key.keysym.sym == SDLK_r) {
+            py::exec("redo_action()");
+        }
+    }
+}
+
 void handleMainMenuChoice(SDL_Event& e) {
 	if (e.type == SDL_KEYDOWN) {
 		std::string choice(1, static_cast<char>(e.key.keysym.sym));
@@ -34,5 +47,6 @@ void handleMainMenuChoice(SDL_Event& e) {
 		else {
 			std::cout << "Invalid choice. Please try again.\n";
 		}
+		handle_key_input(e);
 	}
 }

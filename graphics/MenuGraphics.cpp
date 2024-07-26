@@ -60,6 +60,12 @@ void renderMainMenu(SDL_Renderer* renderer, const std::vector<std::pair<int, std
         y += 50;
     }
 
+    // Add "Undo" and "Redo" options to the menu
+    renderText(renderer, "Undo (U)", 50, y, font, textColor);
+    y += 50;
+    renderText(renderer, "Redo (R)", 50, y, font, textColor);
+    y += 50;
+
     TTF_CloseFont(font);
 }
 
