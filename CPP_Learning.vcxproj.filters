@@ -72,6 +72,12 @@
     <ClInclude Include="Page10.h">
       <Filter>Header Files\Page1-10</Filter>
     </ClInclude>
+    <ClInclude Include="Page15.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Page16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Menu.cpp">
@@ -124,6 +130,12 @@
     </ClCompile>
     <ClCompile Include="Page10.cpp">
       <Filter>Source Files\Page1-10</Filter>
+    </ClCompile>
+    <ClCompile Include="Page15.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Page16.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
