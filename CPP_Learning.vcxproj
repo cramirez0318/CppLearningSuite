@@ -38,6 +38,7 @@
     <ClInclude Include="Page7.h" />
     <ClInclude Include="Page8.h" />
     <ClInclude Include="Page9.h" />
+    <ClInclude Include="graphics/MenuGraphics.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="io.cpp" />
@@ -59,6 +60,7 @@
     <ClCompile Include="Page7.cpp" />
     <ClCompile Include="Page8.cpp" />
     <ClCompile Include="Page9.cpp" />
+    <ClCompile Include="graphics/MenuGraphics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="database.py" />
@@ -153,15 +155,15 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)pybind11\include;C:\Users\chris\AppData\Local\Programs\Python\Python311\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)pybind11\include;C:\Users\chris\AppData\Local\Programs\Python\Python311\include;C:\path\to\SDL2\include</AdditionalIncludeDirectories>
       <AdditionalHeaderUnitDependencies>
       </AdditionalHeaderUnitDependencies>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\chris\AppData\Local\Programs\Python\Python311\libs</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);python311.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\chris\AppData\Local\Programs\Python\Python311\libs;C:\path\to\SDL2\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);python311.lib;SDL2.lib;SDL2main.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -175,7 +177,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)pybind11\include;C:\Users\chris\AppData\Local\Programs\Python\Python311\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)pybind11\include;C:\Users\chris\AppData\Local\Programs\Python\Python311\include;C:\path\to\SDL2\include</AdditionalIncludeDirectories>
       <AdditionalHeaderUnitDependencies>
       </AdditionalHeaderUnitDependencies>
     </ClCompile>
@@ -184,8 +186,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\chris\AppData\Local\Programs\Python\Python311\libs</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);python311.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\chris\AppData\Local\Programs\Python\Python311\libs;C:\path\to\SDL2\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);python311.lib;SDL2.lib;SDL2main.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

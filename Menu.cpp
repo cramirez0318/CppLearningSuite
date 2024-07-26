@@ -3,6 +3,8 @@
 #include <unordered_map>
 #include <algorithm>
 #include <vector>
+#include <SDL.h>
+#include "graphics/MenuGraphics.h"
 
 std::unordered_map<std::string, MenuFunction> menuOptions;
 std::unordered_map<std::string, std::string> menuNames;
@@ -15,24 +17,22 @@ void registerPage(const std::string& key, const std::string& name, const std::fu
 	std::ranges::sort(menuOrder.begin(), menuOrder.end());
 }
 
-void displayMainMenu() {
-	std::cout << "Main Menu:\n";
-	for (const auto& entry : menuOrder) {
-		std::cout << entry.second << ". " << menuNames[entry.second] << "\n";
-	}
-	std::cout << "e. Exit\n";
-	std::cout << "Enter your choice: ";
+void displayMainMenu(SDL_Renderer* renderer) {
+	renderMainMenu(renderer, menuOrder, menuNames);
 }
 
-void handleMainMenuChoice(const std::string& choice) {
-	auto it = menuOptions.find(choice);
-	if (it != menuOptions.end()) {
-		it->second();
-	}
-	else if (choice == "e") {
-		std::cout << "Exiting...\n";
-	}
-	else {
-		std::cout << "Invalid choice. Please try again.\n";
+void handleMainMenuChoice(SDL_Event& e) {
+	if (e.type == SDL_KEYDOWN) {
+		std::string choice(1, static_cast<char>(e.key.keysym.sym));
+		auto it = menuOptions.find(choice);
+		if (it != menuOptions.end()) {
+			it->second();
+		}
+		else if (choice == "e") {
+			std::cout << "Exiting...\n";
+		}
+		else {
+			std::cout << "Invalid choice. Please try again.\n";
+		}
 	}
 }

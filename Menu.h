@@ -3,9 +3,10 @@
 #include <vector>
 #include <functional>
 #include <string>
+#include <SDL.h>
 
-void displayMainMenu();
-void handleMainMenuChoice(const std::string& choice);
+void displayMainMenu(SDL_Renderer* renderer);
+void handleMainMenuChoice(SDL_Event& e);
 void registerPage(const std::string& key, const std::string& name, const std::function<void()>& func, int order);
 
 using MenuFunction = std::function<void()>;
