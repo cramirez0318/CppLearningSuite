@@ -23,9 +23,19 @@ def add_character(name, age, attributes, parent_id=None):
     session.add(new_character)
     session.commit()
 
+def character_to_dict(character):
+    return {
+        'id': character.id,
+        'name': character.name,
+        'age': character.age,
+        'attributes': character.attributes,
+        'parent_id': character.parent_id
+    }
+
 def get_character(id):
-    return session.query(Character).filter_by(id=id).first()
+    character = session.query(Character).filter_by(id=id).first()
+    return character_to_dict(character) if character else None
 
 def get_all_characters():
-    return session.query(Character).all()
-
+    characters = session.query(Character).all()
+    return [character_to_dict(character) for character in characters]
