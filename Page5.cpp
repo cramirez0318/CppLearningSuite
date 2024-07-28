@@ -4,6 +4,8 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/embed.h>
 
+#include "Constants.h"
+
 namespace py = pybind11;
 
 void addCharacter() {
@@ -20,7 +22,7 @@ void addCharacter() {
     std::cin >> parent_id;
 
     py::module db = py::module::import("database");
-    db.attr("add_character")(name, age, attributes, parent_id == -1 ? py::none() : py::int_(parent_id));
+	db.attr("add_character")(name, age, attributes, parent_id == -1 ? py::object(py::none()) : py::int_(parent_id));
 }
 
 void getCharacter() {
