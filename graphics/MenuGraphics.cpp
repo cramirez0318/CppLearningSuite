@@ -82,4 +82,37 @@ void handleMenuEvent(SDL_Event& e, std::unordered_map<std::string, MenuFunction>
 	}
 }
 
+// Function to render input fields
+void renderInputField(SDL_Renderer* renderer, const std::string& text, int x, int y, int w, int h, TTF_Font* font, SDL_Color color) {
+	SDL_Rect inputRect = { x, y, w, h };
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderFillRect(renderer, &inputRect);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_RenderDrawRect(renderer, &inputRect);
+	renderText(renderer, text, x + 5, y + 5, font, color);
+}
 
+// Function to render buttons
+void renderButton(SDL_Renderer* renderer, const std::string& text, int x, int y, int w, int h, TTF_Font* font, SDL_Color color) {
+	SDL_Rect buttonRect = { x, y, w, h };
+	SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255);
+	SDL_RenderFillRect(renderer, &buttonRect);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_RenderDrawRect(renderer, &buttonRect);
+	renderText(renderer, text, x + 10, y + 10, font, color);
+}
+
+// Function to render result displays
+void renderResultDisplay(SDL_Renderer* renderer, const std::string& text, int x, int y, TTF_Font* font, SDL_Color color) {
+	renderText(renderer, text, x, y, font, color);
+}
+
+// Function to handle calculator-specific events
+void handleCalculatorEvent(SDL_Event& e, std::unordered_map<std::string, std::string>& inputFields, std::string& result) {
+	if (e.type == SDL_TEXTINPUT) {
+		// Handle text input for input fields
+	}
+	else if (e.type == SDL_MOUSEBUTTONDOWN) {
+		// Handle button clicks
+	}
+}

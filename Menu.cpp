@@ -50,3 +50,8 @@ void handleMainMenuChoice(SDL_Event& e) {
 		handle_key_input(e);
 	}
 }
+
+// Function to bind user inputs to variables used in calculations
+void bindUserInputs(std::unordered_map<std::string, std::string>& inputFields, std::string& result) {
+	// Implement binding logic here
+}
