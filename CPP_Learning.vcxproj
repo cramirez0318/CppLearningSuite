@@ -39,6 +39,8 @@
     <ClInclude Include="Page8.h" />
     <ClInclude Include="Page9.h" />
     <ClInclude Include="graphics/MenuGraphics.h" />
+    <ClInclude Include="PageInteraction.h" />
+    <ClInclude Include="UIComponents.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="io.cpp" />
@@ -61,6 +63,8 @@
     <ClCompile Include="Page8.cpp" />
     <ClCompile Include="Page9.cpp" />
     <ClCompile Include="graphics/MenuGraphics.cpp" />
+    <ClCompile Include="PageInteraction.cpp" />
+    <ClCompile Include="UIComponents.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="database.py" />

@@ -20,151 +20,95 @@ void printVector(const std::vector<double>& vec) {
 
 // Function for vector addition
 void vectorAddition(SDL_Renderer* renderer) {
-    std::vector<double> vec1(3), vec2(3), result(3);
-    std::string resultText = "";
-    TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
-    if (font == nullptr) {
-        std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
-        return;
-    }
-    SDL_Color textColor = { 0, 0, 0, 255 };
-    bool quit = false;
-    SDL_Event e;
-    while (!quit) {
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
-                quit = true;
-            } else if (e.type == SDL_TEXTINPUT) {
-                // Handle text input for input fields
-            } else if (e.type == SDL_MOUSEBUTTONDOWN) {
-                // Handle button clicks
-            }
-        }
-        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderClear(renderer);
-        renderInputField(renderer, std::to_string(vec1[0]), 50, 50, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[1]), 50, 110, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[2]), 50, 170, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[0]), 50, 230, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[1]), 50, 290, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[2]), 50, 350, 200, 50, font, textColor);
-        renderButton(renderer, "Add", 50, 410, 200, 50, font, textColor);
-        renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
-        SDL_RenderPresent(renderer);
-    }
-    TTF_CloseFont(font);
+	std::vector<double> vec1 = readVector();
+	std::vector<double> vec2 = readVector();
+	std::vector<double> result(3);
+	std::string resultText = "Result: ";
+
+	for (int i = 0; i < 3; ++i) {
+		result[i] = vec1[i] + vec2[i];
+		resultText += std::to_string(result[i]) + " ";
+	}
+
+	TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
+	if (font == nullptr) {
+		std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
+		return;
+	}
+	SDL_Color textColor = { 0, 0, 0, 255 };
+
+	renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
+	TTF_CloseFont(font);
 }
 
 // Function for vector subtraction
 void vectorSubtraction(SDL_Renderer* renderer) {
-    std::vector<double> vec1(3), vec2(3), result(3);
-    std::string resultText = "";
-    TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
-    if (font == nullptr) {
-        std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
-        return;
-    }
-    SDL_Color textColor = { 0, 0, 0, 255 };
-    bool quit = false;
-    SDL_Event e;
-    while (!quit) {
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
-                quit = true;
-            } else if (e.type == SDL_TEXTINPUT) {
-                // Handle text input for input fields
-            } else if (e.type == SDL_MOUSEBUTTONDOWN) {
-                // Handle button clicks
-            }
-        }
-        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderClear(renderer);
-        renderInputField(renderer, std::to_string(vec1[0]), 50, 50, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[1]), 50, 110, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[2]), 50, 170, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[0]), 50, 230, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[1]), 50, 290, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[2]), 50, 350, 200, 50, font, textColor);
-        renderButton(renderer, "Subtract", 50, 410, 200, 50, font, textColor);
-        renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
-        SDL_RenderPresent(renderer);
-    }
-    TTF_CloseFont(font);
+	std::vector<double> vec1 = readVector();
+	std::vector<double> vec2 = readVector();
+	std::vector<double> result(3);
+	std::string resultText = "Result: ";
+
+	for (int i = 0; i < 3; ++i) {
+		result[i] = vec1[i] - vec2[i];
+		resultText += std::to_string(result[i]) + " ";
+	}
+
+	TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
+	if (font == nullptr) {
+		std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
+		return;
+	}
+	SDL_Color textColor = { 0, 0, 0, 255 };
+
+	renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
+	TTF_CloseFont(font);
 }
 
 // Function for dot product
 void dotProduct(SDL_Renderer* renderer) {
-    std::vector<double> vec1(3), vec2(3);
-    double result = 0;
-    std::string resultText = "";
-    TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
-    if (font == nullptr) {
-        std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
-        return;
-    }
-    SDL_Color textColor = { 0, 0, 0, 255 };
-    bool quit = false;
-    SDL_Event e;
-    while (!quit) {
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
-                quit = true;
-            } else if (e.type == SDL_TEXTINPUT) {
-                // Handle text input for input fields
-            } else if (e.type == SDL_MOUSEBUTTONDOWN) {
-                // Handle button clicks
-            }
-        }
-        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderClear(renderer);
-        renderInputField(renderer, std::to_string(vec1[0]), 50, 50, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[1]), 50, 110, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[2]), 50, 170, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[0]), 50, 230, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[1]), 50, 290, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[2]), 50, 350, 200, 50, font, textColor);
-        renderButton(renderer, "Dot Product", 50, 410, 200, 50, font, textColor);
-        renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
-        SDL_RenderPresent(renderer);
-    }
-    TTF_CloseFont(font);
+	std::vector<double> vec1 = readVector();
+	std::vector<double> vec2 = readVector();
+	double result = 0;
+	std::string resultText = "Dot Product: ";
+
+	for (int i = 0; i < 3; ++i) {
+		result += vec1[i] * vec2[i];
+	}
+	resultText += std::to_string(result);
+
+	TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
+	if (font == nullptr) {
+		std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
+		return;
+	}
+	SDL_Color textColor = { 0, 0, 0, 255 };
+
+	renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
+	TTF_CloseFont(font);
 }
 
 // Function for cross product
 void crossProduct(SDL_Renderer* renderer) {
-    std::vector<double> vec1(3), vec2(3), result(3);
-    std::string resultText = "";
-    TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
-    if (font == nullptr) {
-        std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
-        return;
-    }
-    SDL_Color textColor = { 0, 0, 0, 255 };
-    bool quit = false;
-    SDL_Event e;
-    while (!quit) {
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
-                quit = true;
-            } else if (e.type == SDL_TEXTINPUT) {
-                // Handle text input for input fields
-            } else if (e.type == SDL_MOUSEBUTTONDOWN) {
-                // Handle button clicks
-            }
-        }
-        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderClear(renderer);
-        renderInputField(renderer, std::to_string(vec1[0]), 50, 50, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[1]), 50, 110, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec1[2]), 50, 170, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[0]), 50, 230, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[1]), 50, 290, 200, 50, font, textColor);
-        renderInputField(renderer, std::to_string(vec2[2]), 50, 350, 200, 50, font, textColor);
-        renderButton(renderer, "Cross Product", 50, 410, 200, 50, font, textColor);
-        renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
-        SDL_RenderPresent(renderer);
-    }
-    TTF_CloseFont(font);
+	std::vector<double> vec1 = readVector();
+	std::vector<double> vec2 = readVector();
+	std::vector<double> result(3);
+	std::string resultText = "Cross Product: ";
+
+	result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
+	result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];
+	result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];
+
+	resultText += "(" + std::to_string(result[0]) + ", " + std::to_string(result[1]) + ", " + std::to_string(result[2]) + ")";
+
+	TTF_Font* font = TTF_OpenFont(R"(C:\Users\chris\source\repos\CPP_Learning\Fonts\arial.ttf)", 28);
+	if (font == nullptr) {
+		std::cerr << "Failed to load font! SDL_ttf Error: " << TTF_GetError() << '\n';
+		return;
+	}
+	SDL_Color textColor = { 0, 0, 0, 255 };
+
+	renderResultDisplay(renderer, resultText, 50, 470, font, textColor);
+	TTF_CloseFont(font);
 }
 
 // Display Page 2 menu

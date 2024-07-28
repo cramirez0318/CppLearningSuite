@@ -1,0 +1,3 @@
+#include "PageInteraction.h"
+#include "UIComponents.h"
+// Implementations of the event handling functions...

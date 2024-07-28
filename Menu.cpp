@@ -35,8 +35,15 @@ void handle_key_input(SDL_Event event) {
 }
 
 void handleMainMenuChoice(SDL_Event& e) {
-	if (e.type == SDL_KEYDOWN) {
-		std::string choice(1, static_cast<char>(e.key.keysym.sym));
+	if (e.type == SDL_KEYDOWN || e.type == SDL_MOUSEBUTTONDOWN) {
+		std::string choice;
+		if (e.type == SDL_KEYDOWN) {
+			choice = std::string(1, static_cast<char>(e.key.keysym.sym));
+		}
+		else if (e.type == SDL_MOUSEBUTTONDOWN) {
+			// Determine choice based on mouse position
+		}
+
 		auto it = menuOptions.find(choice);
 		if (it != menuOptions.end()) {
 			it->second();
@@ -51,7 +58,7 @@ void handleMainMenuChoice(SDL_Event& e) {
 	}
 }
 
-// Function to bind user inputs to variables used in calculations
 void bindUserInputs(std::unordered_map<std::string, std::string>& inputFields, std::string& result) {
-	// Implement binding logic here
+	// Example binding logic: Combine inputs for a simple operation
+	result = inputFields["num1"] + " " + inputFields["operator"] + " " + inputFields["num2"];
 }

@@ -34,8 +34,8 @@ int main(int /*argc*/, char* /*argv*/[]) {
 			if (e.type == SDL_QUIT) {
 				quit = true;
 			}
-			else {
-				handleMainMenuChoice(e);
+			else if (e.type == SDL_KEYDOWN || e.type == SDL_MOUSEBUTTONDOWN) {
+				handleMainMenuChoice(e); // Update this function to handle specific UI interactions
 			}
 		}
 
